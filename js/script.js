@@ -111,7 +111,7 @@ class Tablo extends Component {
 
     return (
       <div>
-        <h3>Vyzyvatelé Donalda Trumpa</h3>
+        <h3>Kandidáti na slovenského prezidenta</h3>
         <div id="tablo">
           {data.map((candidate, candId) => (
             <Entry
