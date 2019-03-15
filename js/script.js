@@ -5,7 +5,7 @@ import css from "./tablo.css";
 /** @jsx h */
 import { getAge } from "./datehelper";
 
-const rootUrl = "http://data.irozhlas.cz/sk-prezident-kandidati";
+const rootUrl = "https://data.irozhlas.cz/sk-prezident-kandidati";
 
 const Entry = ({
   candidate, id, visible, handleClick,
