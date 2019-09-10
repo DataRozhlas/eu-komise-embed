@@ -5,12 +5,16 @@ import css from "./tablo.css";
 /** @jsx h */
 import { getAge } from "./datehelper";
 
-const rootUrl = "https://data.irozhlas.cz/eu-komise-embed";
+let rootUrl = "https://data.irozhlas.cz/eu-komise-embed";
+if (window.location.hostname === "localhost") {
+  rootUrl = "http://localhost/eu-komise-embed";
+}
+
 
 const Entry = ({
   candidate, id, visible, handleClick,
 }) => {
-  const imgName = `${candidate.name.toLowerCase().replace(" ", "_")}.jpg`;
+  const imgName = `${candidate.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(" ", "_")}.jpg`;
 
   return (
     visible
@@ -19,8 +23,8 @@ const Entry = ({
           <img className="entry-img" alt={candidate.name} src={`${rootUrl}/fotky/${imgName}`} />
           <div className="entry-info">
             <div className="entry-name">{candidate.name}</div>
-            <div className="entry-blurb">{candidate.blurb}</div>
-            <div className="entry-age">{`${getAge(candidate.dob)} let`}</div>
+            <div className="entry-blurb">{candidate.nat}</div>
+            <div className="entry-age">{candidate.fce}</div>
             <div className="entry-desc" dangerouslySetInnerHTML={{ __html: candidate.desc }} />
           </div>
           <div className="entry-arrow-up">⌃</div>
