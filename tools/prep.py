@@ -18,8 +18,3 @@ out = list(d[['name', 'nat', 'fce', 'desc']].to_dict(orient='index').values())
 #%%
 with open('./data/data.json', 'w', encoding='utf-8') as f:
     f.write(json.dumps(out, ensure_ascii=False))
-
-#%%
-out
-
-#%%
