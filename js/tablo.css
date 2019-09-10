@@ -54,6 +54,10 @@
   color: grey;
 }
 
+.entry-blurb-sm {
+  font-size: 0.6em;
+}
+
 #tablo .entry-desc {
   font-size: 0.9em;
 }
