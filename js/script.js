@@ -35,7 +35,7 @@ const Entry = ({
           <img className="entry-img" alt={candidate.name} src={`${rootUrl}/fotky/${imgName}`} />
           <div className="entry-info">
             <div className="entry-name">{candidate.name}</div>
-            <div className="entry-blurb">{candidate.blurb}</div>
+            <div className="entry-blurb">{candidate.fce}</div>
           </div>
           <div className="entry-arrow-down">⌄</div>
         </div>
